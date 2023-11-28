@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 function Register() {
+
+  // should send a Request to server (form)
+  // if response is OK should go to HomePage
+
   const [passValue, setPassValue] = useState('')
   const [passCorrect, setPassCorrect] = useState(true)
 

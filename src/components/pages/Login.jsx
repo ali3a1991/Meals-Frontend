@@ -2,6 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function Login() {
+
+// should send a Request to server (form)
+// if response is OK should go to HomePage
+
+
   return (
     <div className='h-screen flex items-center justify-center'>
       <div className='bg-gray-300 p-10 rounded-2xl flex flex-col gap-4 w-96 justify-center'>
