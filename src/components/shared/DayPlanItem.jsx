@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function DayPlanItem() {
+function DayPlanItem(props) {
   const [edit, setEdit] = useState(false)
   const [breakfast, setBreakfast] = useState('')
   const [lunch, setLunch] = useState('')
@@ -24,24 +24,27 @@ function DayPlanItem() {
 
   return (
     <div className='flex justify-between px-10'>
-      <p>Monday</p>
-      {!edit ? <div className='flex justify-between gap-24'>
-        <p className='bg-yellow-200 h-10 w-10'>{breakfast}</p>
-        <p className='bg-yellow-200 h-10 w-10'>{lunch}</p>
-        <p className='bg-yellow-200 h-10 w-10'>{dinner}</p>
+      <p className='w-24'>{props.day}</p>
+      {!edit ? <div className='flex justify-between w-[70%]'>
+        <p className='w-[20%]'>{breakfast}</p>
+        <p className='w-[20%]'>{lunch}</p>
+        <p className='w-[20%]'>{dinner}</p>
       </div> : 
-      <div>
-        <select onChange={handleSelectValue} name="breakfast">
-          <option value="select" selected disabled>select</option>
+      <div className='flex justify-between w-[70%]'>
+        <select className='w-[20%]' onChange={handleSelectValue} name="breakfast" value={breakfast === '' ? 'Select' : breakfast}>
+          <option value="">Select</option>
           <option value="Stack">Stack</option>
+          <option value="Pasta">Pasta</option>
         </select>
-        <select onChange={handleSelectValue} name="lunch">
-          <option value="select" selected disabled>select</option>
+        <select className='w-[20%]' onChange={handleSelectValue} name="lunch" value={lunch === '' ? 'Select' : lunch}>
+          <option value="">Select</option>
           <option value="Stack">Stack</option>
+          <option value="Pasta">Pasta</option>
         </select>
-        <select onChange={handleSelectValue} name="dinner">
-          <option value="select" selected disabled>select</option>
+        <select className='w-[20%]' onChange={handleSelectValue} name="dinner" value={dinner === '' ? 'Select' : dinner}>
+          <option value="">Select</option>
           <option value="Stack">Stack</option>
+          <option value="Pasta">Pasta</option>
         </select>
       </div>
       }
